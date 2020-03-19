@@ -1,0 +1,6 @@
+#!/bin/bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+echo $DIR
+cd $DIR/../cmd && go build -o royal-rumble
+go test royal-rumble/pkg/file -coverprofile file.out
+go test royal-rumble/pkg/roman -coverprofile roman.out
