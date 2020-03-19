@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+	"fmt"
 	"log"
 	"os"
 	"royal-rumble/pkg/file"
@@ -16,10 +17,12 @@ func main() {
 	defer exception()
 	lines := getLines()
 	roman.Sort(lines)
-	log.Println(lines)
+	for _, line := range lines {
+		fmt.Println(line)
+	}
 }
 
-// test invalid roman in line from cmd and roman
+// check argument and process the argument
 func getLines() []string {
 	lines := []string{}
 	var err error
